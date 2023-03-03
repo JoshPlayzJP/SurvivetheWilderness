@@ -146,7 +146,18 @@ public class PlayerMovementTutorial : MonoBehaviour
         }
     }
 
-    private void Jump()
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.CompareTag("house"))
+        {
+            Debug.Log("Hit house");
+        }
+
+    }
+
+
+private void Jump()
     {
         // reset y velocity
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
@@ -157,4 +168,7 @@ public class PlayerMovementTutorial : MonoBehaviour
     {
         readyToJump = true;
     }
+
+ 
 }
+
