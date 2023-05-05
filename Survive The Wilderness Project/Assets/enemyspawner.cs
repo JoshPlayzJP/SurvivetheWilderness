@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject Enemyprefab;
+    public GameObject EnemyPrefab;
     public float SpawningRange;
+    public GameObject Prefabv;
+    public static bool IsGameActivate;
     
-    public  static bool IsGameActivate;
+  
 
     public Vector3 RandomSpawningPosition()
     {
      float xPos = Random.Range(transform.position.x -SpawningRange,transform.position.x+SpawningRange);
      float zPos = Random.Range(transform.position.z -SpawningRange,transform.position.z+SpawningRange);
 
-      Vector3 spawningPos = new Vector3(xPos,transform.position.y, zPos);
+      Vector3 SpawningPos = new Vector3(xPos,transform.position.y, zPos);
 
-      return spawningPos;
+      return SpawningPos;
     }
 
     // Start is called before the first frame updatea
@@ -35,11 +37,11 @@ public class EnemySpawner : MonoBehaviour
            
                 IsGameActivate=true;
 
-           Instantiate(Enemyprefab,RandomSpawningPosition(),transform.rotation);
-           Instantiate(Enemyprefab,RandomSpawningPosition(),transform.rotation);
-           Instantiate(Enemyprefab,RandomSpawningPosition(),transform.rotation);
-           Instantiate(Enemyprefab,RandomSpawningPosition(),transform.rotation);
-           Instantiate(Enemyprefab,RandomSpawningPosition(),transform.rotation);
+           Instantiate(EnemyPrefab,RandomSpawningPosition(),transform.rotation,Prefabv.transform);
+           Instantiate(EnemyPrefab,RandomSpawningPosition(),transform.rotation);
+           Instantiate(EnemyPrefab,RandomSpawningPosition(),transform.rotation);
+           Instantiate(EnemyPrefab,RandomSpawningPosition(),transform.rotation);
+           Instantiate(EnemyPrefab,RandomSpawningPosition(),transform.rotation);
         }
     }
 }

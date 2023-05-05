@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemyscript : MonoBehaviour
+public class EnemyScript : MonoBehaviour
 {
     public float Speed;
     public EnemySpawner _EnemySpawner;
